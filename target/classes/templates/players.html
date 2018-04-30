@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Players</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+	<img class="logo" src="../static/images/all/logo.jpg" th:src="@{/images/all/logo.jpg}">
+    <table>
+    	<thead>
+	    	<tr>
+	    		<th>Team</th>
+	    		<th>Number</th>
+	    		<th>Player Name</th>
+	    		<th>Position</th>
+	    	</tr>
+    	</thead>
+    	<tbody>
+    		<tr th:each="players: ${player}">
+    			<td th:text="${players.team}"></td>
+    			<td th:text="${players.back_number}"></td>
+    			<td th:text="${players.name}"></td>
+    			<td th:text="${players.position}"></td>
+    		</tr>
+    	</tbody>
+    </table>
+</body>
+</html>
